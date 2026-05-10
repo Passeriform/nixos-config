@@ -78,7 +78,8 @@
       [ -f "$CURRENT_WALL" ] || exit 0
 
       # Remove on fix: https://github.com/Axenide/Ambxst/issues/160
-      PID=$(pgrep -f mpvpaper)
+      OLD_PIDS=($(pgrep -f mpvpaper || true))
+      OLD_PID_COUNT=''${#OLD_PIDS[@]}
 
       ${pkgs.jq}/bin/jq \
         --arg wallPath "${config.programs.ambxst.wallpaperDirectory}/${config.programs.ambxst.wallpaperSelector}" \
@@ -87,13 +88,15 @@
         "$WALLPAPER_CACHE" > "$WALLPAPER_CACHE.tmp" \
         && mv "$WALLPAPER_CACHE.tmp" "$WALLPAPER_CACHE"
 
-      while [ "$(pgrep -f mpvpaper)" -lt 2 ]; do
+      while [ "$(pgrep -f mpvpaper || echo 0)" -le "$OLD_PID_COUNT" ]; do
         sleep 0.5
       done
 
       sleep 2
 
-      kill $PID
+      if [ $OLD_PID_COUNT -gt 0 ]; then
+        kill "''${OLD_PIDS[@]}"
+      fi
     '';
   in
     lib.mkIf (osConfig.programs.ambxst.enable or false) {

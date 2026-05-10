@@ -84,6 +84,11 @@
               icon = "https://www.youtube.com/s/desktop/2c918e63/img/favicon_144x144.png";
               definedAliases = ["@yt"];
             };
+            "Noogle" = {
+              urls = [{template = "https://noogle.dev/q?term={searchTerms}";}];
+              icon = "https://nixos.org/favicon.svg";
+              definedAliases = ["@noogle"];
+            };
             "NixOS Packages" = {
               urls = [{template = "https://search.nixos.org/packages?channel=25.11&from=0&size=200&sort=relevance&type=packages&query={searchTerms}";}];
               icon = "https://nixos.org/favicon.svg";

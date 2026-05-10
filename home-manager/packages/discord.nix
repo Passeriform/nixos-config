@@ -3,16 +3,25 @@
 
   programs.nixcord = {
     enable = true;
-    vesktop.enable = true;
+    discord.enable = false;
+
+    vesktop = {
+      enable = true;
+      useSystemVencord = false;
+    };
 
     config = {
       frameless = true;
       useQuickCss = true;
 
+      enabledThemes = ["ambxst.css"];
+
       plugins = {
         alwaysAnimate.enable = true;
         alwaysTrust.enable = true;
         copyFileContents.enable = true;
+        ClearURLs.enable = true;
+        CopyUserURLs.enable = true;
         disableCallIdle.enable = true;
         experiments.enable = true;
         fakeNitro.enable = true;
@@ -26,8 +35,8 @@
         shikiCodeblocks.enable = true;
         silentTyping.enable = true;
         spotifyCrack = {
-          enable = false;
-          noSpotifyAutoPause = false;
+          enable = true;
+          noSpotifyAutoPause = true;
         };
         validReply.enable = true;
         validUser.enable = true;

@@ -64,6 +64,9 @@
           "workbench.layoutControl.enabled" = false;
           "workbench.list.smoothScrolling" = true;
           "workbench.productIconTheme" = "bongocat";
+          "workbench.startupEditor" = "none";
+          "workbench.welcomePage.extraAnnouncements" = false;
+          "workbench.welcomePage.walkthroughs.openOnInstall" = false;
         };
       };
     };

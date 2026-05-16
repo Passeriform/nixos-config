@@ -30,8 +30,8 @@
         inactive_opacity = 0.8;
         blur = {
           enabled = true;
-          size = 10;
-          passes = 2;
+          size = 12;
+          passes = 3;
         };
       };
 
@@ -42,7 +42,7 @@
         ];
         animation = [
           "windows, 1, 3, myBezier"
-          "windowsOut, 1, 3, default, popin 80%"
+          "windowsOut, 1, 6, myBezier, popin 20%"
           "border, 1, 5, default"
           "workspaces, 1, 3, default"
         ];

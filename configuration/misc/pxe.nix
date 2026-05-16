@@ -9,8 +9,7 @@ in {
     dhcpNoBind = true;
     debug = true;
 
-    inherit kernel;
-    inherit initrd;
+    inherit initrd kernel;
 
     cmdLine = "console=ttyS0 loglevel=4 init=/init root=/dev/ram0 rw";
   };

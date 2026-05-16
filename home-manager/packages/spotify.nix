@@ -22,10 +22,6 @@
       catJamSynced
       shuffle
     ];
-    enabledCustomApps = with spicePkgs.apps; [
-      newReleases
-      nameThatTune
-    ];
-    theme = spicePkgs.themes.hazy;
+    theme = spicePkgs.themes.ziro;
   };
 }

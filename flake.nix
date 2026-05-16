@@ -24,6 +24,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ambxst-hm = {
+      url = "github:Passeriform/Ambxst-hm-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.ambxst.follows = "ambxst";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -56,9 +62,11 @@
     home-manager,
     ambxst,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    system = "x86_64-linux";
+  in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system;
       specialArgs = {
         inherit inputs;
         username = "utkarsh";
@@ -82,7 +90,7 @@
     };
 
     devShells.x86_64-linux.default = let
-      system = "x86_64-linux";
+      inherit system;
       pkgs = import nixpkgs {inherit system;};
       extensions = with pkgs.vscode-extensions; [
         kamadorueda.alejandra

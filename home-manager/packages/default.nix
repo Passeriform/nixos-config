@@ -3,6 +3,7 @@ _: {
     ./git.nix
     ./zsh.nix
     ./hyprland
+    ./ambxst.nix
     ./foot.nix
     ./zen.nix
     ./vscode.nix

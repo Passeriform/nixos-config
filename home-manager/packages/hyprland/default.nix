@@ -2,33 +2,7 @@
   imports = [
     ./gtk.nix
     ./bindings.nix
-    ../../../modules/ambxst-config.nix
   ];
-
-  programs = {
-    quickshell = {
-      enable = true;
-      systemd.enable = true;
-    };
-
-    ambxst = {
-      configOverrides = {
-        "bar.json" = {
-          pillStyle = "squished";
-          enableFirefoxPlayer = true;
-          showPinButton = false;
-        };
-        "theme.json" = {
-          oledMode = true;
-          font = "Iosevka Nerd Font Mono";
-        };
-      };
-
-      wallpaperDirectory = ../../../wallpapers;
-      # TODO: Make this configurable through keybinds
-      wallpaperSelector = "sunpixels";
-    };
-  };
 
   wayland.windowManager.hyprland = {
     enable = true;

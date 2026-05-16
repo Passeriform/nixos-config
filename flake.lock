@@ -21,6 +21,29 @@
         "type": "github"
       }
     },
+    "ambxst-hm": {
+      "inputs": {
+        "ambxst": [
+          "ambxst"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778956662,
+        "narHash": "sha256-avVItMWf0uFf0auZMg7G0MsuPv72j2IwKwQKhHcXp44=",
+        "owner": "Passeriform",
+        "repo": "Ambxst-hm-flake",
+        "rev": "41b22b56027b04cd6f9365b51ae7495c50a5836a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Passeriform",
+        "repo": "Ambxst-hm-flake",
+        "type": "github"
+      }
+    },
     "axctl": {
       "inputs": {
         "nixpkgs": [
@@ -258,6 +281,7 @@
     "root": {
       "inputs": {
         "ambxst": "ambxst",
+        "ambxst-hm": "ambxst-hm",
         "catppuccin-where-is-my-sddm-theme": "catppuccin-where-is-my-sddm-theme",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",

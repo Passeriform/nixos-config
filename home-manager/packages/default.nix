@@ -6,7 +6,7 @@ _: {
     ./ambxst.nix
     ./foot.nix
     ./zen.nix
-    ./vscode.nix
+    ./vscode
     ./spotify.nix
     ./discord.nix
     ./stremio.nix

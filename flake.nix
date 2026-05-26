@@ -64,6 +64,11 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    vscodiumOverlay = import ./overlays/vscodium.nix;
+    pkgs = import nixpkgs {
+      inherit system;
+      overlays = [vscodiumOverlay];
+    };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -77,6 +82,8 @@
         ambxst.nixosModules.default
         home-manager.nixosModules.home-manager
         {
+          nixpkgs.overlays = [vscodiumOverlay];
+
           home-manager = {
             useGlobalPkgs = true;
             extraSpecialArgs = {
@@ -89,25 +96,19 @@
       ];
     };
 
-    devShells.x86_64-linux.default = let
-      inherit system;
-      pkgs = import nixpkgs {inherit system;};
-      extensions = with pkgs.vscode-extensions; [
-        kamadorueda.alejandra
-        jnoortheen.nix-ide
-      ];
+    devShells.${system}.default = let
+      profile = "nix";
     in
       pkgs.mkShell {
         packages = with pkgs; [
-          alejandra
           statix
           deadnix
           nil
-          (vscode-with-extensions.override {
-            vscode = pkgs.vscodium;
-            vscodeExtensions = extensions;
-          })
         ];
+
+        shellHook = ''
+          export VSCODE_TARGET_PROFILE="${profile}";
+        '';
       };
   };
 }

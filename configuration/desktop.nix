@@ -14,7 +14,10 @@
     zsh.enable = true;
 
     gpu-screen-recorder.enable = true;
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.enable = false;
+    };
     ambxst = {
       enable = true;
       fonts.enable = true;

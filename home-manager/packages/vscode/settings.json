@@ -16,6 +16,8 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmPasteNative": false,
     "explorer.excludeGitIgnore": true,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
     "files.simpleDialog.enable": true,
     "git.autofetch": true,
     "git.confirmSync": false,

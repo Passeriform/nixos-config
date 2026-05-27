@@ -107,7 +107,7 @@
         ];
 
         shellHook = ''
-          export VSCODE_TARGET_PROFILE="${profile}";
+          export VSCODE_PROFILE="${profile}";
         '';
       };
   };

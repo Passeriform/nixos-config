@@ -8,7 +8,7 @@ _: {
     ./zen.nix
     ./vscode
     ./spotify.nix
-    ./discord.nix
+    ./discord
     ./stremio.nix
   ];
 

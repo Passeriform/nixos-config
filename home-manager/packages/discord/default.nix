@@ -4,10 +4,11 @@
   programs.nixcord = {
     enable = true;
     discord.enable = false;
-
     vesktop = {
       enable = true;
-      useSystemVencord = false;
+      settings = {
+        # hardwareVideoAcceleration = true;
+      };
     };
 
     config = {
@@ -44,5 +45,11 @@
         webScreenShareFixes.enable = true;
       };
     };
+  };
+
+  xdg.configFile = {
+    "vesktop/userAssets/splash".source = ./assets/splash.webp;
+    "vesktop/userAssets/tray".source = ./assets/tray.png;
+    "vesktop/userAssets/trayUnread".source = ./assets/trayUnread.png;
   };
 }

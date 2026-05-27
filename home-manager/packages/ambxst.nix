@@ -4,11 +4,6 @@
   ];
 
   programs = {
-    quickshell = {
-      enable = true;
-      systemd.enable = true;
-    };
-
     ambxst = {
       enable = true;
       face = ../../assets/bird.svg;

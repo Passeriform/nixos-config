@@ -6,6 +6,7 @@
   environment.sessionVariables = {
     _PR_SHELL = "/bin/zsh";
     NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 
   programs = {
@@ -18,6 +19,8 @@
       enable = true;
       fonts.enable = true;
     };
+
+    dconf.enable = true;
   };
 
   users.users."${username}".shell = pkgs.zsh;

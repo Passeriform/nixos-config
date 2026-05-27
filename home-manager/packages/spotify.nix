@@ -18,7 +18,7 @@
       songStats
       history
       betterGenres
-      # oneko
+      oneko
       catJamSynced
       shuffle
     ];

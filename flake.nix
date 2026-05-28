@@ -67,11 +67,6 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    vscodiumOverlay = import ./overlays/vscodium.nix;
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [vscodiumOverlay];
-    };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -85,7 +80,7 @@
         ambxst.nixosModules.default
         home-manager.nixosModules.home-manager
         {
-          nixpkgs.overlays = [vscodiumOverlay];
+          nixpkgs.overlays = import ./overlays;
 
           home-manager = {
             useGlobalPkgs = true;
@@ -101,6 +96,7 @@
 
     devShells.${system}.default = let
       profile = "nix";
+      pkgs = import nixpkgs {inherit system;};
     in
       pkgs.mkShell {
         packages = with pkgs; [

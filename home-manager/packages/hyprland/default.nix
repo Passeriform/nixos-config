@@ -6,7 +6,11 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = null;
+    portalPackage = null;
+    configType = "hyprlang";
     xwayland.enable = false;
+    systemd.enable = false;
 
     settings = {
       general = {
@@ -58,6 +62,4 @@
       ];
     };
   };
-
-  xdg.portal.enable = true;
 }

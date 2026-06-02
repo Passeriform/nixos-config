@@ -3,8 +3,8 @@ self: super: {
     nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [super.jq super.unixtools.xxd];
 
     postInstall = let
-      searchPattern = "async run(s){const n=s.get(Je),";
-      replacePattern = "async run(s,t){const n=s.get(Je);if(typeof t===\\\"string\\\"){const p=e.userDataProfilesService.profiles.find(x=>x.name===t.trim());if(p){const svc=Object.values(e).find(v=>v?.switchProfile);if(svc)return svc.switchProfile(p);}}const ";
+      searchPattern = "async run(s){const n=s.get(nt),";
+      replacePattern = "async run(s,t){const n=s.get(nt);if(typeof t===\\\"string\\\"){const p=e.userDataProfilesService.profiles.find(x=>x.name===t.trim());if(p){const svc=Object.values(e).find(v=>v?.switchProfile);if(svc)return svc.switchProfile(p);}}const ";
     in
       (oldAttrs.postInstall or "")
       + ''

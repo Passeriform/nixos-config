@@ -16,6 +16,7 @@
     gpu-screen-recorder.enable = true;
     hyprland = {
       enable = true;
+      withUWSM = true;
       xwayland.enable = false;
     };
     ambxst = {

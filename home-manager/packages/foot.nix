@@ -6,10 +6,12 @@
 
   programs.foot = {
     enable = true;
-    settings.colors.background = "0a0a0a";
-    settings.main = {
-      font = "Iosevka Nerd Font:size=11";
-      pad = "20x10";
+    settings = {
+      colors-dark.background = "0a0a0a";
+      main = {
+        font = "Iosevka Nerd Font:size=11";
+        pad = "20x10";
+      };
     };
   };
 }

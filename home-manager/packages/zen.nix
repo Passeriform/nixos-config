@@ -90,17 +90,17 @@
               definedAliases = ["@noogle"];
             };
             "NixOS Packages" = {
-              urls = [{template = "https://search.nixos.org/packages?channel=25.11&from=0&size=200&sort=relevance&type=packages&query={searchTerms}";}];
+              urls = [{template = "https://search.nixos.org/packages?channel=26.05&from=0&size=200&sort=relevance&type=packages&query={searchTerms}";}];
               icon = "https://nixos.org/favicon.svg";
               definedAliases = ["@pkg" "@nix"];
             };
             "NixOS Options" = {
-              urls = [{template = "https://search.nixos.org/options?channel=25.11&from=0&size=200&sort=relevance&type=packages&query={searchTerms}";}];
+              urls = [{template = "https://search.nixos.org/options?channel=26.05&from=0&size=200&sort=relevance&type=packages&query={searchTerms}";}];
               icon = "https://nixos.org/favicon.svg";
               definedAliases = ["@opt"];
             };
             "Home Manager Options" = {
-              urls = [{template = "https://home-manager-options.extranix.com/?release=release-25.11&query={searchTerms}";}];
+              urls = [{template = "https://home-manager-options.extranix.com/?release=release-26.05&query={searchTerms}";}];
               icon = "https://nixos.org/favicon.svg";
               definedAliases = ["@hm"];
             };

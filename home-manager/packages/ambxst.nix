@@ -7,7 +7,7 @@
     ambxst = {
       enable = true;
       face = ../../assets/bird.svg;
-      mutagenScheme = "scheme-tonal-spot";
+      mutagenScheme = "scheme-rose-pine";
       config = {
         bar = {
           launcherIcon = ../../assets/bird.svg;

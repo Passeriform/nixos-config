@@ -37,12 +37,7 @@
 
   userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
 in {
-  home.packages = with pkgs; [
-    vscodium
-    alejandra
-    nil
-    nixd
-  ];
+  home.packages = with pkgs; [vscodium];
 
   programs.vscodium = {
     enable = true;

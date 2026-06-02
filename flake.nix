@@ -100,9 +100,11 @@
     in
       pkgs.mkShell {
         packages = with pkgs; [
+          alejandra
           statix
           deadnix
           nil
+          nixd
         ];
 
         shellHook = ''

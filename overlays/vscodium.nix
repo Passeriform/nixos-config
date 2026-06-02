@@ -1,4 +1,4 @@
-self: super: {
+_: super: {
   vscodium = super.vscodium.overrideAttrs (oldAttrs: {
     nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [super.jq super.unixtools.xxd];
 

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+_: {
   imports = [
     ./gtk.nix
     ./bindings.nix

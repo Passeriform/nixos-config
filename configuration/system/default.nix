@@ -1,9 +1,9 @@
 _: {
   imports = [
+    ./asus.nix
     ./bootloader.nix
     ./graphics.nix
     ./sound.nix
-    ./keyboard.nix
     ./networking.nix
   ];
 

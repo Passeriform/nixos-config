@@ -1,9 +1,7 @@
-{pkgs, ...}: let
-  ghostline-cursor-theme = pkgs.callPackage ../packages/ghostline-cursor-theme.nix {};
-in {
+{pkgs, ...}: {
   home.pointerCursor = {
     gtk.enable = true;
-    package = ghostline-cursor-theme;
+    package = pkgs.ghostline-cursor-theme;
     name = "Ghostline Dark";
     size = 32;
   };

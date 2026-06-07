@@ -18,6 +18,11 @@
     unixtools.net-tools
     wget
 
+    # Nix
+    handlr-regex
+    nix-melt
+    nix-tree
+
     # Utils
     acpica-tools
     fastfetch

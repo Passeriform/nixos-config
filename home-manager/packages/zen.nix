@@ -22,6 +22,7 @@
           "browser.bookmarks.addedImportButton" = false;
           "browser.laterrun.enabled" = false;
           "browser.rights.3.shown" = true;
+          "browser.shell.checkDefaultBrowser" = false;
           "browser.termsofuse.prefMigrationCheck" = true;
           "browser.theme.toolbar-theme" = 1;
           "extensions.autoDisableScopes" = 0;

@@ -1,0 +1,33 @@
+{
+    "nix.enableLanguageServer": true,
+    "nix.formatterPath": "alejandra",
+    "nix.serverPath": "nixd",
+    "nix.hiddenLanguageServerErrors": [
+        "textDocument/definition"
+    ],
+    "nix.serverArgs": [
+        "--extra-experimental-features", "flakes",
+        "--impure"
+    ],
+    "nix.serverSettings": {
+        "nixd": {
+            "nixpkgs": {
+                "expr": "import (builtins.getFlake \"${workspaceFolder}\").inputs.nixpkgs { }"
+            },
+            "formatting": {
+                "command": ["alejandra"]
+            },
+            "options": {
+                "nixos": {
+                    "expr": "(builtins.getFlake \"flake:nixos-config\").options"
+                },
+                "home-manager": {
+                    "expr": "(builtins.getFlake \"flake:nixos-config\").options.home-manager.users.type.getSubOptions []"
+                }
+            }
+        }
+    },
+    "[nix]": {
+        "editor.formatOnSave": true
+    }
+}

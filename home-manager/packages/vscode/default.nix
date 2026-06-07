@@ -20,7 +20,7 @@
       azir-11.azir-vscode-theme
     ]);
 
-  nixExtensions = with pkgs.vscode-extensions; [];
+  nixSettings = builtins.fromJSON (builtins.readFile ./settings/nix.json);
 
   webExtensions =
     (with pkgs.vscode-extensions; [
@@ -35,7 +35,9 @@
       vitest.explorer
     ]);
 
-  userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
+  userSettings = builtins.fromJSON (builtins.readFile ./settings/user.json);
+
+  mergeSettings = builtins.foldl' lib.recursiveUpdate {};
 in {
   home.packages = with pkgs; [vscodium];
 
@@ -47,8 +49,8 @@ in {
         extensions = commonExtensions;
       };
       nix = {
-        inherit userSettings;
-        extensions = commonExtensions ++ nixExtensions;
+        userSettings = mergeSettings [userSettings nixSettings];
+        extensions = commonExtensions;
       };
       web = {
         inherit userSettings;

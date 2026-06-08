@@ -1,6 +1,6 @@
 {
-  pkgs,
   inputs,
+  pkgs,
   ...
 }: {
   imports = [inputs.spicetify-nix.homeManagerModules.default];
@@ -10,7 +10,7 @@
   in {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [
-      adblockify
+      adblock
       hidePodcasts
       powerBar
       seekSong
@@ -24,4 +24,6 @@
     ];
     theme = spicePkgs.themes.ziro;
   };
+
+  xdg.mimeApps.defaultApplicationPackages = with pkgs; [spotify];
 }

@@ -1,6 +1,6 @@
 {
-  pkgs,
   inputs,
+  pkgs,
   ...
 }: let
   sddm-theme = inputs.catppuccin-where-is-my-sddm-theme.packages.${pkgs.stdenv.hostPlatform.system}.default;

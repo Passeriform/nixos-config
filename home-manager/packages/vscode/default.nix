@@ -1,6 +1,8 @@
 {
-  pkgs,
   inputs,
+  config,
+  lib,
+  pkgs,
   ...
 }: let
   commonExtensions =
@@ -58,4 +60,21 @@ in {
       };
     };
   };
+
+  xdg.mimeApps = let
+    associations =
+      builtins.listToAttrs (map (mime: {
+        name = mime;
+        value = "codium.desktop";
+      }) ["text/xml" "text/html" "text/plain" "text/javascript" "application/json"])
+      // builtins.listToAttrs (map (mime: {
+        name = mime;
+        value = "codium-url-handler.desktop";
+      }) ["x-scheme-handler/vscode" "x-scheme-handler/vscodium"]);
+  in
+    lib.mkIf config.xdg.mimeApps.enable {
+      defaultApplicationPackages = with pkgs; [vscodium];
+      associations.added = associations;
+      defaultApplications = associations;
+    };
 }

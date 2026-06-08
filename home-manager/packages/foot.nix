@@ -1,8 +1,10 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    foot
-    yazi
-  ];
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [foot];
 
   programs.foot = {
     enable = true;
@@ -13,5 +15,20 @@
         pad = "20x10";
       };
     };
+  };
+
+  xdg = {
+    terminal-exec.settings.default = ["foot.desktop"];
+    mimeApps = let
+      associations = builtins.listToAttrs (map (mime: {
+        name = mime;
+        value = "foot.desktop";
+      }) ["x-scheme-handler/ssh" "x-scheme-handler/terminal"]);
+    in
+      lib.mkIf config.xdg.mimeApps.enable {
+        defaultApplicationPackages = with pkgs; [foot];
+        associations.added = associations;
+        defaultApplications = associations;
+      };
   };
 }

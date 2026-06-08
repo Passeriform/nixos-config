@@ -28,4 +28,17 @@
   };
 
   users.users."${username}".shell = pkgs.zsh;
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+
+    config = {
+      common = {
+        default = ["hyprland" "gtk"];
+      };
+    };
+  };
 }

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  username,
-  ...
-}: {
+{username, ...}: {
   services.asusd.enable = true;
   services.supergfxd.enable = true;
 

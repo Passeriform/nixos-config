@@ -1,11 +1,9 @@
 {
-  pkgs,
   inputs,
+  pkgs,
   ...
 }: {
-  imports = [
-    inputs.nix-index-database.homeModules.default
-  ];
+  imports = [inputs.nix-index-database.homeModules.default];
 
   home.packages = with pkgs; [
     # Archive

@@ -5,4 +5,9 @@ _: {
   };
 
   services.hyprpolkitagent.enable = true;
+
+  xdg = {
+    terminal-exec.enable = true;
+    mimeApps.enable = true;
+  };
 }

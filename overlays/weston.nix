@@ -1,5 +1,5 @@
-_: super: {
-  weston = super.weston.override {
+_: prev: {
+  weston = prev.weston.override {
     xwaylandSupport = false;
   };
 }

@@ -1,9 +1,9 @@
-self: super: {
-  ghostline-cursor-theme = self.stdenvNoCC.mkDerivation (finalAttrs: {
+final: _: {
+  ghostline-cursor-theme = final.stdenvNoCC.mkDerivation (finalAttrs: {
     pname = "ghostline-cursor-theme";
     version = "1.1";
 
-    src = self.fetchFromGitHub {
+    src = final.fetchFromGitHub {
       owner = "patinhooh";
       repo = "ghostline-cursor-theme";
       rev = "v${finalAttrs.version}";
@@ -18,9 +18,9 @@ self: super: {
     meta = {
       description = "Ghostline Cursor theme";
       homepage = "https://github.com/patinhooh/ghostline-cursor-theme";
-      license = self.lib.licenses.mit;
-      platforms = self.lib.platforms.linux;
-      maintainers = with self.lib.maintainers; [passeriform];
+      license = final.lib.licenses.mit;
+      platforms = final.lib.platforms.linux;
+      maintainers = with final.lib.maintainers; [passeriform];
     };
   });
 }

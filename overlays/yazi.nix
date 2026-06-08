@@ -1,9 +1,9 @@
-_: super: {
+final: prev: {
   yazi =
-    super.runCommand "yazi-xdg" {
-      buildInputs = [super.yazi-unwrapped];
+    final.runCommand "yazi-xdg" {
+      buildInputs = [prev.yazi-unwrapped];
     } ''
-      cp -r ${super.yazi-unwrapped} $out
+      cp -r ${prev.yazi-unwrapped} $out
 
       chmod -R u+w $out
 

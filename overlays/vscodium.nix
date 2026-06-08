@@ -1,6 +1,6 @@
-_: super: {
-  vscodium = super.vscodium.overrideAttrs (oldAttrs: {
-    nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [super.jq super.unixtools.xxd];
+final: prev: {
+  vscodium = prev.vscodium.overrideAttrs (oldAttrs: {
+    nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [final.jq final.unixtools.xxd];
 
     postInstall = let
       searchPattern = "async run(s){const n=s.get(nt),";

@@ -9,5 +9,6 @@ _: {
   xdg = {
     terminal-exec.enable = true;
     mimeApps.enable = true;
+    userDirs.enable = true;
   };
 }

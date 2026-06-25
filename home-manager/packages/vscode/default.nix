@@ -37,6 +37,14 @@
       vitest.explorer
     ]);
 
+  pythonExtensions = with pkgs.vscode-extensions; [
+    ms-python.python
+    ms-python.vscode-pylance
+    ms-python.black-formatter
+  ];
+
+  pythonSettings = builtins.fromJSON (builtins.readFile ./settings/python.json);
+
   userSettings = builtins.fromJSON (builtins.readFile ./settings/user.json);
 
   mergeSettings = builtins.foldl' lib.recursiveUpdate {};
@@ -57,6 +65,10 @@ in {
       web = {
         inherit userSettings;
         extensions = commonExtensions ++ webExtensions;
+      };
+      python = {
+        userSettings = mergeSettings [userSettings pythonSettings];
+        extensions = commonExtensions ++ pythonExtensions;
       };
     };
   };

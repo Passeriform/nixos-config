@@ -6,5 +6,6 @@
       "discord"
       "spotify"
       "stremio-linux-shell"
+      "vscode-extension-MS-python-vscode-pylance"
     ]);
 }

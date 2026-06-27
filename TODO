@@ -1,25 +1,54 @@
-New
-  Stream any running video to active console window
-  Add DevShell support
-  Setup stremio and ModernZ with mpv
+NixOS
+  Fix brightness reset issue
+  Add track-pad gestures
+  Stream any running video to mpv (zen pip, stremio, ...)
+  Setup impermanence
   Use stylix for unified theming
-    Use fastfetch with png from nixos-icons
+    Use fastfetch with png from nixos-icons or passeriform logo
+    Use a good fastfetch rice
+  Recolor spotify with Ambxst colors
+  Set vesktop icon to discord icon
+  Fix discord mic background noise
+  Fix discord bluetooth mic+headphones issues
+  Alias find to use -L flag by default
+  Fix icon conflict with Ambxst and Hyprland (bluetooth, network, notifications, ...)
 
-Weird font scaling on Ambxst components
-Variable screen scaling on every boot
-
-Discord
-  Fix mic background noise
-  Fix vencord settings crashing vesktop
-  Fix bluetooth mic+headphones issues
-  Remove regular discord entry from run and rename/re-icon vesktop as discord
-
-Unfixable for now
+Unfixable
   Unable to launch apps in specified workspace
 
-Fresh install from scratch
-Disko based complete system declarative setup
+Project Tangents
+  Nix flake explorer extension for vscode
+  Easier flake computed derivation query
+  Fork ambxst to pure wayland
+  Custom oneko for discord, allow dragging and sleep position
 
-Change zen browser shortcuts to minimal ones
+  Portfolio
+    Add glow to the accents
+    Use system-ui as default
+    Give an option to choose font
+    Marquee svg generator to show tech stack
 
-Verify if UWSM is really worth it
+  Home-lab
+    terminal based web browser
+    web-based desktop environment
+    cyberpunk ricing
+
+  Qt
+    Create qt file-picker and bind via xdg
+    Create qt screen sharing and bind via xdg
+
+  Axosc
+    Add volume and other options in tray like theming in MPV
+    Add compile test for axosc.lua which should fail if lua is faulty
+    Add phosphor icons as dependency in axosc flake
+    Squish scrubber when seeking and volume in axosc
+    Add OSD feedback messages on all changes and style OSD with Iosevka
+    Change speed button icon based on which speed is active
+    Add thumbfast with proper theming
+
+Enhancements
+  Replace kitty dependency in Ambxst with foot terminal
+  Fresh install from scratch
+  Disko based complete system declarative setup
+  Run full analysis if UWSM is worth it
+  Add Rust profile to VSCode and flake.nix for Rust projects

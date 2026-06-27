@@ -2,6 +2,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
+    systems.url = "github:nix-systems/default";
+
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +43,7 @@
     yazi-plugins = {
       url = "github:lordkekz/nix-yazi-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
     };
 
     zen-browser = {
@@ -64,11 +67,13 @@
     nixcord = {
       url = "github:FlameFlag/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-nixcord.follows = "nixpkgs";
     };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
     };
   };
 

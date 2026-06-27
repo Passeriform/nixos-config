@@ -4,6 +4,7 @@ _: {
     ./zsh.nix
     ./hyprland
     ./ambxst.nix
+    ./mpv.nix
     ./foot.nix
     ./zen.nix
     ./vscode

@@ -33,6 +33,11 @@
       inputs.ambxst.follows = "ambxst";
     };
 
+    axosc = {
+      url = "github:Passeriform/axosc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -67,6 +72,7 @@
     nixos-hardware,
     home-manager,
     ambxst,
+    axosc,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -83,7 +89,9 @@
         ambxst.nixosModules.default
         home-manager.nixosModules.home-manager
         {
-          nixpkgs.overlays = import ./overlays;
+          nixpkgs.overlays =
+            [axosc.overlays.default]
+            ++ (import ./overlays);
 
           home-manager = {
             useGlobalPkgs = true;

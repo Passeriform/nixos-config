@@ -65,6 +65,26 @@
         "type": "github"
       }
     },
+    "axosc": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782566916,
+        "narHash": "sha256-TCITV+L1U5chWSeybgENYPPp7bif8Z24iEMpXqyHO6M=",
+        "owner": "Passeriform",
+        "repo": "axosc",
+        "rev": "41e19bf044948107fb50303d4a1d505008b41bd0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Passeriform",
+        "repo": "axosc",
+        "type": "github"
+      }
+    },
     "catppuccin-where-is-my-sddm-theme": {
       "inputs": {
         "nixpkgs": [
@@ -268,6 +288,7 @@
       "inputs": {
         "ambxst": "ambxst",
         "ambxst-hm": "ambxst-hm",
+        "axosc": "axosc",
         "catppuccin-where-is-my-sddm-theme": "catppuccin-where-is-my-sddm-theme",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",

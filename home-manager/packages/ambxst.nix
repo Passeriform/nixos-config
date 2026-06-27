@@ -26,7 +26,7 @@
       };
 
       wallpaperDirectory = ../../wallpapers;
-      # TODO: Make this configurable through keybinds
+      # TODO: Make this configurable through keybindings
       wallpaperSelector = "sunpixels";
     };
   };

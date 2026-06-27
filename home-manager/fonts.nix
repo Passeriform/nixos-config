@@ -11,12 +11,9 @@
   fonts.fontconfig = {
     enable = true;
     antialiasing = true;
+    hinting = "slight";
     subpixelRendering = "rgb";
 
-    # defaultFonts = {
-    #   monospace = [ "Iosevka" "Fira Code" ];
-    #   serif = [ "Iosevka" "Fira Code" ];
-    #   emoji = [ "Iosevka" "Fira Code" ];
-    # };
+    defaultFonts.monospace = ["Iosevka" "Fira Code"];
   };
 }

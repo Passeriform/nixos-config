@@ -31,15 +31,22 @@
     };
   };
 
-  xdg.mimeApps = let
-    associations = builtins.listToAttrs (map (mime: {
-      name = mime;
-      value = "be.alexandervanhee.gradia.desktop";
-    }) ["image/jpg" "image/bmp"]);
-  in
-    lib.mkIf config.xdg.mimeApps.enable {
-      defaultApplicationPackages = with pkgs; [gradia];
-      associations.added = associations;
-      defaultApplications = associations;
+  xdg = {
+    userDirs.extraConfig = {
+      XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
+      XDG_RECORDINGS_DIR = "${config.home.homeDirectory}/Videos/Recordings";
     };
+
+    mimeApps = let
+      associations = builtins.listToAttrs (map (mime: {
+        name = mime;
+        value = "be.alexandervanhee.gradia.desktop";
+      }) ["image/jpg" "image/bmp"]);
+    in
+      lib.mkIf config.xdg.mimeApps.enable {
+        defaultApplicationPackages = with pkgs; [gradia];
+        associations.added = associations;
+        defaultApplications = associations;
+      };
+  };
 }

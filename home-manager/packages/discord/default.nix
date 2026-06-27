@@ -21,8 +21,8 @@
         alwaysAnimate.enable = true;
         alwaysTrust.enable = true;
         copyFileContents.enable = true;
-        ClearURLs.enable = true;
-        CopyUserURLs.enable = true;
+        clearUrls.enable = true;
+        copyUserUrls.enable = true;
         disableCallIdle.enable = true;
         experiments.enable = true;
         fakeNitro.enable = true;

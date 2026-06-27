@@ -6,6 +6,7 @@ _: {
     ./ambxst.nix
     ./mpv.nix
     ./foot.nix
+    ./yazi
     ./zen.nix
     ./vscode
     ./spotify.nix

@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    yazi-plugins = {
+      url = "github:lordkekz/nix-yazi-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -73,6 +78,7 @@
     home-manager,
     ambxst,
     axosc,
+    yazi-plugins,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -90,7 +96,10 @@
         home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays =
-            [axosc.overlays.default]
+            [
+              axosc.overlays.default
+              yazi-plugins.overlays.default
+            ]
             ++ (import ./overlays);
 
           home-manager = {

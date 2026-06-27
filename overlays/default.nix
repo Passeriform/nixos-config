@@ -1,4 +1,5 @@
 map import [
+  ./flexoki-dark-flavor.nix
   ./ghostline-cursor-theme.nix
   ./vscodium.nix
   ./weston.nix

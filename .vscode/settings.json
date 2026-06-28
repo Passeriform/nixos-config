@@ -55,6 +55,7 @@
         "pipewire",
         "pixl-garden.bongocat",
         "polkit",
+        "poppler-utils",
         "pulseaudio",
         "resvg",
         "rtkit",

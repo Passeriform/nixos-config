@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     _7zz
     resvg
+    poppler-utils
   ];
 
   programs.yazi = {

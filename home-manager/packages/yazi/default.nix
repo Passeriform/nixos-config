@@ -4,12 +4,26 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [yazi];
+  home.packages = with pkgs; [
+    _7zz
+    resvg
+  ];
 
   programs.yazi = {
     enable = true;
     flavors.flexoki-dark = pkgs.yaziFlavors.flexoki-dark;
     theme.flavor.dark = "flexoki-dark";
+
+    theme.status = {
+      sep_left = {
+        close = "";
+        open = "";
+      };
+      sep_right = {
+        close = "";
+        open = "";
+      };
+    };
 
     settings = {
       mgr.show_hidden = true;
@@ -23,10 +37,23 @@
       ];
     };
 
-    plugins = builtins.listToAttrs (map (name: {
-      inherit name;
-      value = pkgs.yaziPlugins.${name};
-    }) ["full-border" "git" "glow" "ouch" "starship"]);
+    initLua = ./init.lua;
+
+    plugins = {
+      full-border = {
+        package = pkgs.yaziPlugins.full-border;
+        setup = true;
+      };
+      starship = {
+        package = pkgs.yaziPlugins.starship;
+        setup = true;
+      };
+      git = {
+        package = pkgs.yaziPlugins.git;
+        setup = true;
+      };
+      inherit (pkgs.yaziPlugins) glow ouch;
+    };
   };
 
   xdg.mimeApps = let

@@ -15,6 +15,8 @@
       DisableTelemetry = true;
     };
 
+    nativeMessagingHosts = [pkgs.ff2mpv-rust];
+
     profiles = {
       "${username}" = {
         isDefault = true;
@@ -64,6 +66,7 @@
             darkreader
             ublock-origin
             ublacklist
+            ff2mpv
           ];
         };
 

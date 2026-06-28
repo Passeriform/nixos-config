@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [yt-dlp];
+
   programs.mpv = {
     enable = true;
 

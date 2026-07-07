@@ -60,7 +60,7 @@ _: {
     application = [
       "SUPER, Return, exec, foot"
       "SUPER, W, exec, zen-beta"
-      "SUPER, E, exec, foot -e yazi"
+      "SUPER, E, exec, handlr open ~"
       "SUPER, X, exec, codium"
     ];
 

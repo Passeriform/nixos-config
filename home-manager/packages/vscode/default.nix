@@ -24,6 +24,12 @@
 
   nixSettings = builtins.fromJSON (builtins.readFile ./settings/nix.json);
 
+  cExtensions = with pkgs.vscode-extensions; [
+    llvm-vs-code-extensions.vscode-clangd
+    vadimcn.vscode-lldb
+    xaver.clang-format
+  ];
+
   webExtensions =
     (with pkgs.vscode-extensions; [
       mikestead.dotenv
@@ -35,12 +41,19 @@
       antfu.vite
       oxc.oxc-vscode
       vitest.explorer
+      bradlc.vscode-tailwindcss
+      stivo.tailwind-fold
     ]);
 
   pythonExtensions = with pkgs.vscode-extensions; [
     ms-python.python
     ms-python.vscode-pylance
     ms-python.black-formatter
+  ];
+
+  scadExtensions = with inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
+    leathong.openscad-language-support
+    thijsdaniels.vscode-openscad-preview
   ];
 
   pythonSettings = builtins.fromJSON (builtins.readFile ./settings/python.json);
@@ -62,6 +75,10 @@ in {
         userSettings = mergeSettings [userSettings nixSettings];
         extensions = commonExtensions;
       };
+      c = {
+        inherit userSettings;
+        extensions = commonExtensions ++ cExtensions;
+      };
       web = {
         inherit userSettings;
         extensions = commonExtensions ++ webExtensions;
@@ -69,6 +86,10 @@ in {
       python = {
         userSettings = mergeSettings [userSettings pythonSettings];
         extensions = commonExtensions ++ pythonExtensions;
+      };
+      scad = {
+        inherit userSettings;
+        extensions = commonExtensions ++ scadExtensions;
       };
     };
   };

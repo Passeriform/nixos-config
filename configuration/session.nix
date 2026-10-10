@@ -3,11 +3,11 @@
   pkgs,
   ...
 }: let
-  sddm-theme = inputs.catppuccin-where-is-my-sddm-theme.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  sddmTheme = inputs.catppuccin-where-is-my-sddm-theme.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   environment.systemPackages = with pkgs; [
     hyprpolkitagent
-    (sddm-theme.override {flavor = "mocha";})
+    (sddmTheme.override {flavor = "mocha";})
   ];
 
   security.polkit.enable = true;

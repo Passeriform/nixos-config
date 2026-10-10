@@ -5,6 +5,7 @@ _: {
     ./hyprland
     ./ambxst.nix
     ./mpv.nix
+    ./qbittorrent.nix
     ./foot.nix
     ./yazi
     ./zen.nix

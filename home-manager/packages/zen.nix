@@ -40,6 +40,49 @@
           "zen.workspaces.continue-where-left-off" = true;
         };
 
+        handlers.schemes = {
+          mailto = {
+            action = 2;
+            ask = false;
+            handlers = [
+              {}
+              {
+                name = "Gmail";
+                uriTemplate = "https://mail.google.com/mail/?extsrc=mailto&url=%s";
+              }
+            ];
+          };
+
+          stremio = {
+            action = 4;
+            ask = false;
+          };
+
+          magnet = {
+            action = 2;
+            ask = false;
+            handlers = [
+              {}
+              {
+                name = "Qbittorrent";
+                uriTemplate = "http://localhost:8080/#download=%s";
+              }
+            ];
+          };
+        };
+
+        handlers.mimeTypes."application/x-bittorrent" = {
+          action = 2;
+          ask = false;
+          handlers = [
+            {}
+            {
+              name = "Qbittorrent";
+              uriTemplate = "http://localhost:8080/#download=%s";
+            }
+          ];
+        };
+
         bookmarks = {
           force = true;
           settings = [

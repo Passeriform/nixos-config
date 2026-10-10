@@ -31,8 +31,10 @@
 
     ambxst-hm = {
       url = "github:Passeriform/Ambxst-hm-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.ambxst.follows = "ambxst";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        ambxst.follows = "ambxst";
+      };
     };
 
     axosc = {
@@ -42,8 +44,10 @@
 
     yazi-plugins = {
       url = "github:lordkekz/nix-yazi-plugins";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
     };
 
     zen-browser = {
@@ -66,14 +70,18 @@
 
     nixcord = {
       url = "github:FlameFlag/nixcord";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-nixcord.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
     };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
     };
   };
 
